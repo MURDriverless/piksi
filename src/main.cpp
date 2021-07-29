@@ -104,6 +104,7 @@ void sbp_vel_ned_callback(u16 sender_id, u8 len, u8 msg[], void *context)
   vel_msg.vector.x = vel_ned.n;
   vel_msg.vector.y = vel_ned.e;
   vel_msg.vector.z = vel_ned.d;
+  navsat_vel.publish(vel_msg);
 
 }
 void sbp_gps_time_callback(u16 sender_id, u8 len, u8 msg[], void *context)
