@@ -14,7 +14,6 @@ find_package(catkin REQUIRED COMPONENTS
 
 
 catkin_package(
-  INCLUDE_DIRS include
   CATKIN_DEPENDS roscpp std_msgs geometry_msgs sensor_msgs
 )
 
@@ -26,8 +25,6 @@ catkin_package(
 ## Your package locations should be listed before other locations
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-
-
 add_executable(piksi
     src/main.cpp
     src/common.h
@@ -36,4 +33,6 @@ add_executable(piksi
     src/imu.h 
 )
 
-target_link_libraries(piksi libsbp.a ${catkin_LIBRARIES})
+
+
+target_link_libraries(piksi ${CMAKE_SOURCE_DIR}/src/libsbp.a ${catkin_LIBRARIES})
