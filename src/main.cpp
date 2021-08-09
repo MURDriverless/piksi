@@ -164,7 +164,7 @@ void sbp_setup(void)
   /* Register a node and callback, and associate them with a specific message ID. */
   sbp_register_callback(&sbp_state, SBP_MSG_GPS_TIME, &sbp_gps_time_callback,
                         NULL, &gps_time_node);
-  sbp_register_callback(&sbp_state, SBP_MSG_POS_LLH, &sbp_pos_llh_cov_callback,
+  sbp_register_callback(&sbp_state, SBP_MSG_POS_LLH_COV, &sbp_pos_llh_cov_callback,
                         NULL, &pos_llh_cov_node);
   sbp_register_callback(&sbp_state, SBP_MSG_VEL_NED, &sbp_vel_ned_callback,
                         NULL, &vel_ned_node);
